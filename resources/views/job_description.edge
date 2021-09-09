@@ -1,0 +1,255 @@
+@layout('layout')
+
+@section('content')
+<section class="my-6 lg:my-16 px-6 lg:px-10">
+  <div>
+    Last update: september 2021
+  </div>
+  <div class="mt-10 prose prose-sm w-screen max-w-full">
+    <h1>What we do</h1>
+    <p>
+      We started Project Lobster in 2018 to re-imagine the way we interact with vision products, building a vision care
+      company from a holistic point of view. Project Lobster today is A Modern Optical Experience created for those who
+      see the world differently, where we design, manufacture and sell directly to the end user handmade, 'in fashion'
+      glasses and sunglasses through our e-commerce & physical stores.
+    </p>
+    <p>
+      Technology plays a key role in our future as we keep narrowing the distance between online & offline customer
+      experiences, delivering 'wow' moments along the customer journey and developing innovative tele-health solutions.
+    </p>
+
+    <h1>Your functions</h1>
+    <p>
+      As a Full stack Software Engineer, and one of the first members of the technology team, you will be responsible,
+      together with me, the Head of Technology / CTO, for designing and building our ecosystem of technology.
+    </p>
+    <p>
+      In a general view, your work will fall under one of these categories:
+    </p>
+    <ul>
+      <li>
+        execute new features and needs already shaped and described from the rest of the organisation
+      </li>
+      <li>
+        shape and define new features and projects together with the CTO and other stake-holders
+      </li>
+      <li>
+        improve the quality of work of the engineering. Optimising testing workflows, creating automated processes...
+      </li>
+    </ul>
+
+    <h2>Example past and planned projects you would be making part in</h2>
+    <ul>
+      <li>
+        Lobster Just-in-time: stock and offer thousands of prescription lenses references (SKUs) to cut and sell in
+        under
+        an
+        hour, across several stores.
+      </li>
+      <li>
+        As well as making a custom component on our website so that customers can see where their prescription is
+        available,
+        and to even order it online to deliver prescription glasses in under 3 hours.
+      </li>
+      <li>
+        Lobster virtual-try-on: connect the API of an external virtual provider to our website to offer virtual-try-on
+        to
+        our customers on the collection and product pages.
+      </li>
+      <li>
+        Creating a testing system to automate front-end end-to-end testing before every Git push to ensure the highest
+        level
+        of quality development without manually testing everything.
+      </li>
+      <li>
+        Integrating external lenses providers APIs to estimate the cost down to an order item level. Giving insights our
+        most to least profitable best-sellers.
+      </li>
+      <li>
+        Looking for and integrate into a service that will allow our ops team to draw custom charts and reports without
+        using any code, independently.
+      </li>
+    </ul>
+
+
+    <h1>Communication</h1>
+    <p>
+      We are a spanish startup, based in Barcelona, with all of our team in Barcelona and Valencia: so <strong>fluent
+        spanish
+        is a must</strong> to be able to communicate with the rest of the team. And, as a web developer, you must be
+      able to
+      listen, read, and write english perfectly. You should also able to defend yourself quite honorably speaking it, in
+      case you need to talk with a systems or service provider, or any international freelancer.
+    </p>
+
+    <br>
+    <h1>Localization</h1>
+    <p>We believe in a balanced remote-office approach.
+      <br>
+      Nothing beats being shoulder-to-shoulder while talking about database structures, or shaping a new feature or
+      Service.
+      While, once they have been defined, being able to code them on your own.
+      <br>
+
+      That is why <strong>we ask you to be located in
+        Barcelona</strong>, and be <strong>open to come work from our offices 2 days a week on average</strong>,
+      depending of the needs of the moment.
+
+      <br> "On average" means that, depending on the nature of the task we will
+      increase or decrease the office time. If we are going to be discussing database models, structures, and
+      architecture: nothing beets peer-to-peer talks in front of a whiteboard. But when the work is properly defined and
+      shaped: being at your own without any office distractions really makes a difference. The "2 days a week" is
+      probably a good average through the year. <br>Of course: if you wish to come more often work from the
+      office, or you feel like your performance would increase from more remote days: feel free to talk to
+      me. </p>
+    <br>
+
+    <h1>Tech stack and ecosystem</h1>
+    <p>Our Tech assets and needs fall into two big categories</p>
+
+    <h2>An e-commerce storefront</h2>
+    <p>
+      Our website <a target="_blank" rel="noreferrer" href="https://projectlobster.com/">https://projectlobster.com/</a>
+      is both tasked of our international and
+      national sales, as well as informing and convincing our national customers of to come to our stores. We use
+      <a href="https://www.shopify.com/" target="_blank" rel="noreferrer">Shopify</a> to abstract the most complicated
+      parts of an e-commerce (payment processing, load balancing, deployment, working and clean CMS). We leverage their
+      Themes to offer an (almost) fully customisable user experience, while leaving the heavy lifting and API management
+      to Shopify. In order to work on it you will need to mainly have 2+years of front-end experience with:
+    </p>
+    <ul>
+      <li>Plain old HTML5</li>
+      <li>Plain old Javascript</li>
+      <li>Plain old CSS</li>
+      <li>Build pipelines, even though we only use them to compress and treat our javascript and css assets</li>
+      <li>Git &amp; Github</li>
+    </ul>
+    <p>Extra points if you have worked with:</p>
+    <ul>
+      <li>The <a href="https://shopify.dev/" target="_blank" rel="noreferrer">Shopify</a> ecosystem, in particular their
+        server-side-rendering language <a
+          href="https://www.shopify.com/partners/blog/115244038-an-overview-of-liquid-shopifys-templating-language"
+          target="_blank" rel="noreferrer">Liquid</a></li>
+      <li><a href="https://tailwindcss.com/" target="_blank" rel="noreferrer">TailwindCSS</a></li>
+      <li><a href="https://alpinejs.dev/" target="_blank" rel="noreferrer">AlpineJS</a></li>
+    </ul>
+
+    <p>The role of Shopify is to allow both our potential and existing customers to browse our latest products and
+      news. But, as we soon found out that a pair of prescription lenses can have hundreds of different field
+      combinations, and a simple mismatch will cause the customer to not see properly: we realised we needed something a
+      bit more custom to take care of our operations and quality control.&nbsp; The operational handling of our
+      orders comes goes beyond any existing application and is taken care with a custom in-house
+      solution:</p>
+
+
+    <h2>A custom full-stack admin application</h2>
+    <p>Managing an e-commerce is hard. Selling prescription glasses is also hard. Doing both at the same time with
+      stores is quite hard. In order to offer the best, quickest, and seamless experience for our customers: we
+      developed a custom application that allows us to keep track of what we sell, who do we sell it to, when, and
+      how. This custom application is mainly made for inside usage. Its primary users are our stores coworkers,
+      that use it to track their operations day to day and scale the communications with our customers. So that they get
+      the best possible experience, while allowing us to scale our sales of more than 1000 glasses fully customized
+      glasses every month across the globe. </p>
+    <p>
+      For the inner tech structure: we are big believers on <a href="https://m.signalvnoise.com/the-majestic-monolith/"
+        target="_blank" rel="noreferrer">the Majestic
+        Monolith</a> for small teams of development. That means we don't work with popular heavy JS frameworks
+      like React, Vue, or Angular. Mainly because we prefer a server-side-first approach, because it is more simple,
+      straigh-forward, and stable accross clients. That makes us front-end simple, and lightweight. In order to
+      work on it you will need to mainly have 2+years of front-end experience with:
+    </p>
+    <ul>
+      <li>All of the technologies mentioned in the last part for the front-end of the admin side</li>
+    </ul>
+    <p>And supplement it with <a href="https://alpinejs.dev/" target="_blank" rel="noreferrer">AlpineJS</a>, a
+      lightweight javascript framework more geared for server-side rendered applications.</p>
+    <p>As for the back-end side: you should have 2+years of back-end experience with the majority of the
+      following:</p>
+    <ul>
+      <li>Node.js projects</li>
+      <li>SQL language and working with databases. Not only reading from them, but applying constraints, data structure,
+        migrations...&nbsp;</li>
+      <li>basic level of Typescript (understand Types, Type inference, and creating custom Types and Interfaces)</li>
+      <li>unit testing, extra points for experience with Test Driven Development</li>
+      <li>experience with MVC frameworks / projects / architecture</li>
+    </ul>
+    <p>What is most important is to have experience with the previous concepts, but you will get extra points if
+      you know one or more of these specific technologies that:</p>
+    <ul>
+      <li>we use <a href="https://adonisjs.com/" target="_blank" rel="noreferrer">AdonisJS</a>, a fully-featured
+        back-end framework written in Typescript (but you can completely understand with with Javascript) to organize
+        our repository, and abstract the most basic levels of any HTTP based application: routing, asset handling,
+        server-side view rendering, Database ORM.... </li>
+      <li>eventhough we abstract most of the DevOps complexity using PaaS systems for deployment: have experience
+        deploying an APP and everything that goes with it: CI/CD, dealing with different environments, log
+        management.... </li>
+      <li>integration and system testing </li>
+    </ul>
+
+    <h1>Salary</h1>
+    <div>Gross salary: 35.000 - 40.000€ / year in 12 or 14 payments following your preferences.</div>
+
+    <br>
+    <h1>Workflows, and values&nbsp;</h1>
+    <div>We will work on cycles. In these cycles we will assign work in the form of self-contained and (mostly)
+      independent tickets. That will have been throughly explained and redacted by either the Head of Technology,
+      yourself, or another co-worker helped by a programmer. Cycles usually take two weeks for the most part. We use <a
+        href="https://linear.app/" target="_blank" rel="noreferrer">Linear</a> to handle the tickets and discussions,
+      and Github to completely track the work we do. Which tickets to prioritise will be decided by the
+      stake-holders. But each developer can choose which tickets to tackle themselves. Tickets are not only
+      about writing code: maybe you need to go to a store to talk to your co-workers on a improvement or new feature.
+      Maybe you need to define with the Head of Technology a new process or improvement. Shaping and writing a really
+      complicated or important ticket is work itself, so it should be assigned as such. When working with design
+      heavy tasks: you will follow a <a href="https://www.figma.com/" target="_blank" rel="noreferrer">Figma</a> design
+      provided to you by the team's designer. Probably with a mobile, and desktop view to ensure good
+      responsiveness. <br>We expect you to be agile, independent, and accountable of your work. But we know that
+      just asking it without giving anything in return is just not fair. We believe in the Agile manifesto,
+      particulary in:</div>
+    <ul>
+      <li>pair programming.&nbsp;<br>Developers should talk and work on code between them often, even more importantly
+        when it comes to big changes </li>
+      <li>testing your own code.&nbsp;<br>Things will go wrong from time to time. If the didn't: it means that we are
+        not being quick or independent enough. But we need to minimise those risks and increase our confidence in
+        shipping quality bug-free code by testing it. And automatic tests at that.&nbsp; </li>
+      <li>no code silos.&nbsp;<br>All developers need to work on everything so that there are no specialities.
+      </li>
+      <li>the right and <strong>obligation</strong> to refuse work you are not confident on how to do it<br>Either
+        because it has not been correctly shaped and described, or because you lack the specific knowledge in certain
+        technologies to make it happen: it is your responsibility to say "I don't know how to do this". We, the
+        developers, are the ones with technical knowledge to, at least estimate, how hard or possible something
+        is. </li>
+      <li>the right and <strong>obligation</strong> to ship good code.&nbsp;<br>This means safe, well tested, and code
+        you are proud of. You will probably ship bugs that will go in-between the tests now and then, but you should
+        never consciously leave a mess behind when you pushed the commit button.</li>
+    </ul>
+    <div>You also have to keep in mind that, even though each of these values need to be uphold at every single
+      commit: the amount varies on how complex, dangerous, or important the commit is to the business. If you are
+      switching the padding of a button that the designer asked you: we do not need to pair program, don't worry. But if
+      the head of operations wants to introduce a new concept of Lenses that needs database migrations and major Model
+      changes: you bet we are going to talk about it and throughly test it. </div>
+
+
+    <br>
+    <h1>Personal attitude: being a Manager Of One</h1>
+    <div>In projectlobster our mission is to be the best optical and sun glasses brand. That includes product, brand,
+      marketing, and operations. Our technology's mission is to make all of the previous parts better, faster, leaner,
+      and seamless. We have a million ideas on how to achieve that. But we do not have a million people to
+      execute them. We are young company with lots of energy, we prefer to keep being lean to be faster and avoid
+      excessive management and bureaucracy. You will be working directly beneath our Head of Technology as a
+      full-stack developer across the whole technology layer of Project Lobster. You will of course need some time to
+      get familiarised with the stack and practises, but in a couple of months you should be able to start offering new
+      exciting ideas and opportunities to use new or old technology to make our customer's and our lives
+      better. This means that we are looking for <a href="https://signalvnoise.com/posts/1430-hire-managers-of-one"
+        target="_blank" rel="noreferrer">Managers of
+        One</a>. We are looking for an active developer that loves solving problems and bringing value to the customer
+      and to their co-workers. We are not looking for a developer that will wait sitting down to receive tickets, or
+      that will look into the ceiling if they get stuck on one.&nbsp; <br></div>
+
+    <br>
+    <h1>How we work</h1>
+    <div>You can find more details in <a href="https://github.com/Project-Lobster/Project-Lobster" target="_blank"
+        rel="noreferrer">our public GitHub repo</a>&nbsp;</div>
+  </div>
+</section>
+
+@endsection

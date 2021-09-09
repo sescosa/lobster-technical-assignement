@@ -1,43 +1,184 @@
-<!DOCTYPE html>
-<html lang="en">
+@layout('layout')
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdonisJS - A fully featured web framework for Node.js</title>
-  @entryPointStyles('app')
-  @entryPointScripts('app')
-</head>
+@section('content')
+<div class="my-6 lg:my-16 px-6 lg:px-10">
+  <div class="prose prose-sm mx-auto w-screen max-w-full">
+    <h1 class="text-4xl font-serif"> It Works! </h1>
+    <p class="mt-4">
+      Congratulations, you correctly loaded the Project Lobster Technical assignment
+    </p>
 
-<body>
+    <h2>Project Lobster & Technology</h2>
 
-  <main>
-    <div>
-      <h1 class="text-3xl"> It Works! </h1>
-      <p class="subtitle">
-        Congratulations, you have just created your first AdonisJS app.
+    <p>In Project Lobster we are always looking for curious, professional, and eager to learn developers.</p>
+
+    <h2>Aim of the assignement and how it will be rated</h2>
+    <p>
+      The aim of this assignment is to see how the applicant works with new frameworks to him/her in a full-stack
+      context (Adonis & TailwindCSS).
+    </p>
+    <p>
+      It should not last more than one day or two.
+    </p>
+    <p>
+      Due to the short time, and expecting that the applicant is not familiarised with frameworks and/or language, the
+      quality or cleanness of code won't be harshly judged. As long as the applicant later on can ask, comment, and
+      defend his/her decisions. Sharing what could have been done better, and how.
+    </p>
+    <p>
+      This code will not be used in production, it is purely to understand how the applicant works with the given
+      assignment.
+    </p>
+
+
+    <h2>Repository introduction</h2>
+    <p>
+      The repository represents a really basic admin screen where users can see the Orders of an e-commerce.
+    </p>
+    <p>
+      Our main application is, in essence, just that. But way more complex and filled with features and details.
+    </p>
+
+
+    <h2>Tech stack and frameworks used</h2>
+    <p>
+      Both this repository and our production apps mainly use these frameworks / libraries. We recommend reading their
+      home-pages before going into the assignement, and going into their documentation when needed while completing it.
+    </p>
+  </div>
+
+
+  <div class="mt-6 lg:mt-12 space-y-6 lg:space-y-12 text-gray-700">
+    <!-- Adonis JS -->
+    <div class="p-6 bg-indigo-50 border-indigo-100 border rounded-xl">
+      @component('components/two_col_card', {})
+      @slot('legend')
+      <h2 class="font-serif text-2xl">AdonisJS</h2>
+      <p>
+        <a href="https://docs.adonisjs.com/guides/introduction">Official docs</a>
       </p>
-      <button type="button" x-data="{counter: 0}" x-on:click="counter++">
-        counter:
-        <span x-text="counter"></span>
-      </button>
+      @endslot
+      <div class="prose prose-sm">
+        <p>
+          According to their website:
+        </p>
+        <div class="pl-2 border-0 border-l-2 border-indigo-300">
+          <cite>
+            AdonisJS includes everything you need to create a fully functional web app or an API server.
+            Stop wasting hours in downloading and assembling hundreds of packages together — Use AdonisJS and be
+            productive from day one.
+          </cite>
+        </div>
+        <p>
+          Adonis is mainly a back-end (server-side) framework, but it also comes with a server-side templating engine:
+          <a href="https://docs.adonisjs.com/guides/views/introduction">Edge.</a> That gives us a quick, performant, and
+          simple front-end that more than covers our needs.
+        </p>
+        <p>
+          To render this page, the general request-response goes like this:
+          <ol>
+            <li>Your browser hits the dev server for the address localhost:3333</li>
+            <li>The server looks into the <code>start/routes.ts</code> file to know what to do</li>
+            <li>
+              There, we call the Edge templating engine to render the template "welcome". That is located at
+              <code>./resources/views/welcome.edge</code>
+            </li>
+            <li>
+              That file also calls the layout located at <code>./resources/views/layout.edge</code> to render the
+              general HTML markup
+            </li>
+            <li>Once the HTML has been rendered: it gets sent back with a code 200 response to the browser, that loads
+              it along with its assets</li>
+          </ol>
+        </p>
 
-      <ul>
-        <li>
-          The route for this page is defined inside <code>start/routes.ts</code> file
-        </li>
 
-        <li>
-          You can update this page by editing <code>resources/views/welcome.edge</code> file
-        </li>
-
-        <li>
-          If you run into problems, you can reach us on <a href="https://discord.gg/vDcEjq6?">Discord</a> or the <a
-            href="https://forum.adonisjs.com/">Forum</a>.
-        </li>
-      </ul>
+      </div>
+      @endcomponent
     </div>
-  </main>
-</body>
 
-</html>
+    <!-- TailwindCSS -->
+    <div class="p-6 bg-blue-50 border-blue-100 border rounded-xl">
+      @component('components/two_col_card', {})
+      @slot('legend')
+      <h2 class="font-serif text-2xl">TailwindCSS</h2>
+      <p>
+        <a href="https://tailwindcss.com/">Official docs</a>
+      </p>
+      @endslot
+      <div class="prose prose-sm">
+        <p>
+          Taking it directly from their website, TailwindCSS can be defined as:
+          <br>
+          <div class="border-0 border-l-2 border-blue-400 pl-2">
+            <cite>
+              A utility-first CSS framework packed with classes like "flex", "pt-4", "text-center" and "rotate-90" that
+              can be
+              composed to build any design, directly in your markup.
+            </cite>
+          </div>
+        </p>
+        <p>
+          Eventhough it can seem propostous to some developers at first, in our experience it is one of the most quick,
+          direct, and low-maintenance ways of writing good CSS.
+        </p>
+      </div>
+      @endcomponent
+    </div>
+
+    <!-- Alpine JS -->
+    <div class="p-6 bg-green-50 border-green-100 border rounded-xl">
+      @component('components/two_col_card', {})
+      @slot('legend')
+      <h2 class="font-serif text-2xl">AlpineJS</h2>
+      <p>
+        <a href="https://alpinejs.dev/">Official docs</a>
+      </p>
+      @endslot
+      <div class="prose prose-sm">
+        <p>
+          AlpineJs is a minimalist front-end Javascript framework, mainly aimed at sprinkling light Javascript
+          interactions on a server-side rendered page.
+        </p>
+
+        <p>
+          We use exactly for that: giving some light and simple JS interactivity. Buttons, divs that appear /
+          disappear...
+          We also sometimes use it to make more complex AJAX components, but that is usually the exception.
+        </p>
+
+        <p>
+          Here is a really simple example of a basic button with a counter that increments on click:
+        </p>
+        <div class="bg-green-100 px-3 py-1.5 rounded-lg text-xs">
+          <code class="whitespace-pre-line">
+            {{ `<button type="button" x-data="{counter: 0}" x-on:click="counter++">
+                  counter: <span x-text="counter"></span>
+                </button>`
+              }}
+          </code>
+        </div>
+
+        <p>
+          That when rendered, styled, and initialized looks like this:
+        </p>
+        <button class="px-4 py-1.5 bg-green-100 shadow border-green-200 border text-green-700 rounded-md" type="button"
+          x-data="{counter: 0}" x-on:click="counter++">
+          counter:
+          <span x-text="counter"></span>
+        </button>
+      </div>
+      @endcomponent
+    </div>
+  </div>
+
+  <div>
+    <p class="my-6 lg:my-12 text-center text-xl">
+      <a href="/orders">
+        Go to orders index page
+      </a>
+    </p>
+  </div>
+
+</div>
+@endsection

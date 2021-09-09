@@ -1,0 +1,11 @@
+{{--
+  Usage:
+  @!component('components/locale_timestamp', { ts: something.createdAt, showTime: true, showDate: true, classes: 'text-primary-600' })
+--}}
+
+<span class="{{classes || ''}}" x-id="locale_timestamp_{{ts}}"
+  x-data="{ts: '{{ts}}', showTime: {{showTime}}, showDate: {{showDate}}, localeTs: '' }"
+  x-init="localeTs = (showDate ? new Date(ts).toLocaleDateString() : '' ) + ' ' + (showTime ? new Date(ts).toLocaleTimeString() : '' ); localeTs.tr;"
+  x-text="localeTs">
+  {{ts}}
+</span>

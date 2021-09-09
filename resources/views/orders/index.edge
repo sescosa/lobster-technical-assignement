@@ -1,0 +1,51 @@
+@layout('layout')
+
+@section('content')
+<section class="my-6 lg:my-16 px-6 lg:px-10 mx-auto max-w-screen-xl">
+  <h1 class="text-3xl font-serif">Orders</h1>
+
+  <div class="mt-6">
+    @if(orders && orders.length > 0)
+    @component('components/table')
+    @slot('head')
+    <tr class="bg-white">
+      <th>Orden</th>
+      <th>Processed at</th>
+      <th>Customer</th>
+      <th>Total</th>
+      <th></th>
+    </tr>
+    @endslot
+
+    @slot('body')
+    @each((order, index) in orders)
+    <tr id="order_{{order.id}}">
+      <td>
+        #{{order.id}}
+      </td>
+      <td>
+        @!component('components/locale_timestamp', { ts: order.processedAt, showTime: true, showDate: true, classes:
+        'text-primary-600' })
+      </td>
+      <td>{{order.customersName}}</td>
+      <td>{{order.total}}</td>
+      <td>
+        <a href="/orders/{{order.id}}">Show details</a>
+      </td>
+    </tr>
+    @endeach
+    @endslot
+    @endcomponent
+
+    @else
+    <p>No orders yet!</p>
+    <p>
+      To populate the development DB with fake orders: try running in the terminal the command:
+      <br>
+      <code class="bg-black text-white rounded-md px-2 py-1">node ace db:seed</code>
+    </p>
+    @endif
+  </div>
+
+</section>
+@endsection

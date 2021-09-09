@@ -1,0 +1,18 @@
+@font-face {
+  font-family: "Gascogne";
+  src: url('./font-gascogne-light.eot') format('embedded-opentype'),
+  url('./font-gascogne-light.woff2') format('woff2'),
+  url('./font-gascogne-light.woff') format('woff'),
+  url('./font-gascogne-light.ttf') format('truetype'),
+  url('./font-gascogne-light.svg#font-gascogne-light') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gascogne';
+  src:
+  url('./font-gascogne-extralight.woff2') format('woff2'),
+  url('./font-gascogne-extralight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+}

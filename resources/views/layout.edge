@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title || 'Lobster ' }}</title>
+
+  @entryPointScripts('app')
+  @entryPointStyles('app')
+
+  <link rel="stylesheet" href="/fonts/fonts.css">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+</head>
+
+<body class="font-sans bg-gray-50 min-h-screen">
+  <header>
+    <nav
+      class="px-3 md:px-6 py-2 md:py-4 bg-primary-50 flex items-center space-x-3 md:space-x-6 lg:space-x-8 font-serif">
+      <a href="/" class="no-underline hover:underline">
+        <div class="w-32">
+          @include('svgs/new-logo-lobster')
+        </div>
+      </a>
+      <a href="/job-description" class="no-underline hover:underline">Job description</a>
+      <a href="/orders" class="no-underline hover:underline">Orders</a>
+    </nav>
+  </header>
+
+  <main>
+    @section('content')
+    @endsection
+  </main>
+
+  <footer class="py-6 text-center">
+    <p>
+      If you run into problems or roadblocks, you can reach me at <a
+        href="mailto:ivan@projectlobster.com">ivan@projectlobster.com</a>.
+    </p>
+  </footer>
+</body>
+
+</html>

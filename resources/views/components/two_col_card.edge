@@ -1,0 +1,29 @@
+{{--
+  Usage:
+  @component('components/two_col_card', {
+    mainClasses: 'leave for good defaults'
+    })
+    @slot('legend')
+      Left bit
+    @endslot
+
+    <h2>Main bit</h2>
+  @endcomponent
+--}}
+
+<div>
+  <div class="md:grid md:grid-cols-3 md:gap-6">
+    <div class="md:col-span-1">
+      @if($slots.legend)
+      {{{ await $slots.legend() }}}
+      @endif
+    </div>
+
+    <div
+      class="mt-5 md:mt-0 md:col-span-2 sm:overflow-hidden space-y-6 {{ typeof mainClasses === 'string' ? mainClasses : '' }}">
+      @if($slots.main)
+      {{{ await $slots.main() }}}
+      @endif
+    </div>
+  </div>
+</div>
