@@ -1,0 +1,36 @@
+@layout('layout')
+
+@section('content')
+<section class="my-6 lg:my-16 px-6 lg:px-10 mx-auto max-w-screen-xl">
+  <h1 class="text-3xl font-serif">Order {{order.name}}</h1>
+
+  <!-- Customers Info -->
+  <div class="mt-6">
+    <h2 class="text-xl font-serif">Customer's info</h2>
+    <div class="mt-2 px-4 lg:px-8 py-1 lg:py-2 grid grid-cols-3 border-primary-200 border rounded-lg">
+      <span>{{order.customersName}}</span>
+      <span>{{order.customersEmail}}</span>
+      <span>{{order.customersPhone}}</span>
+    </div>
+  </div>
+
+  <!-- Items -->
+  <div class="mt-8">
+    <h2 class="text-xl font-serif">Order items</h2>
+
+    <div class="mt-2 space-y-6">
+      @each(item in order.items)
+      <div class="px-4 lg:px-8 py-1 lg:py-2 bg-primary-50 rounded-lg">
+        <p>{{item.name}}</p>
+        <p>{{item.price}}€</p>
+      </div>
+      @endeach
+    </div>
+
+    <div class="mt-4">
+      <!-- The "include" tag loads a partial. More info at: https://docs.adonisjs.com/guides/views/partials  -->
+      @include('orders/show/new-item')
+    </div>
+  </div>
+</section>
+@endsection

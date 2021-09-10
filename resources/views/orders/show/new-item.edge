@@ -1,0 +1,24 @@
+<div x-data="{showModal: false}" x-cloak>
+  <button type="button" x-on:click="showModal = true" class="px-4 py-1.5 bg-white rounded-lg shadow hover:shadow-md">
+    Add new item
+  </button>
+
+  <!-- The "component" tag loads an Edge component. More info at: https://docs.adonisjs.com/guides/views/components  -->
+  @component('components/modal', {flagName: 'showModal'})
+  <!-- Here goes the modal content -->
+  <div>
+    <!-- Close modal button -->
+    <div class="w-full text-right">
+      <button class="px-4 py-1.5 bg-white border border-gray-300 text-gray-800 rounded-lg shadow hover:shadow-md"
+        x-on:click="showModal = false">
+        &#x2715;
+      </button>
+    </div>
+
+    <div>
+      form
+    </div>
+
+  </div>
+  @endcomponent
+</div>

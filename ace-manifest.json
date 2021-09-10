@@ -1,5 +1,17 @@
 {
   "commands": {
+    "repopulate:db": {
+      "settings": {
+        "loadApp": true,
+        "stayAlive": false
+      },
+      "commandPath": "./commands/RepopulateDb",
+      "commandName": "repopulate:db",
+      "description": "Destroys and then recreates all DB tables. And then it runs the OrdersSeeder",
+      "args": [],
+      "aliases": [],
+      "flags": []
+    },
     "dump:rcfile": {
       "settings": {},
       "commandPath": "@adonisjs/core/build/commands/DumpRc",

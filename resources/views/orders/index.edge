@@ -9,7 +9,7 @@
     @component('components/table')
     @slot('head')
     <tr class="bg-white">
-      <th>Orden</th>
+      <th>Order number</th>
       <th>Processed at</th>
       <th>Customer</th>
       <th>Total</th>
@@ -20,15 +20,17 @@
     @slot('body')
     @each((order, index) in orders)
     <tr id="order_{{order.id}}">
+      <td>{{order.name}}</td>
       <td>
-        #{{order.id}}
-      </td>
-      <td>
-        @!component('components/locale_timestamp', { ts: order.processedAt, showTime: true, showDate: true, classes:
+        @!component('components/locale_timestamp', { ts: order.createdAt, showTime: true, showDate: true, classes:
         'text-primary-600' })
       </td>
-      <td>{{order.customersName}}</td>
-      <td>{{order.total}}</td>
+      <td>
+        {{order.customersName}}
+        <br>
+        {{order.customersEmail}}
+      </td>
+      <td>{{order.total}}€</td>
       <td>
         <a href="/orders/{{order.id}}">Show details</a>
       </td>
@@ -42,7 +44,7 @@
     <p>
       To populate the development DB with fake orders: try running in the terminal the command:
       <br>
-      <code class="bg-black text-white rounded-md px-2 py-1">node ace db:seed</code>
+      <code class="bg-black text-white rounded-md px-2 py-1">node ace repopulate:db</code>
     </p>
     @endif
   </div>
