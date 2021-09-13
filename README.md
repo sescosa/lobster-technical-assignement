@@ -1,6 +1,6 @@
 # Project Lobster Technical assignement for a Full Stack developer
 
-## Project Lobster & Technology
+## Project Lobster, Technology & You
 In Project Lobster we are always looking for curious, professional, and eager to learn developers.
 Thanks to you, we can ship more and better value to our end customers, as well as making the best decisions possible from a business point of view.
 
@@ -19,7 +19,7 @@ Due to the short time, and expecting that the applicant is not familiarised with
 
 Asking questions about the assignement is okey and encouraged, we will take into account the type of questions and how they are asked.
 
-## Repository instructions
+## Repo instructions
 In order to do the assignement in your machine, you will need to have installed at least:
 - Node.js 14
 - npm >= 6.0.0.
