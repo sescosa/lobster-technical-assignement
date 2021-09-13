@@ -19,7 +19,7 @@ Due to the short time, and expecting that the applicant is not familiarised with
 
 Asking questions about the assignement is okey and encouraged, we will take into account the type of questions and how they are asked.
 
-## Repo instructions
+## Repo instructions
 In order to do the assignement in your machine, you will need to have installed at least:
 - Node.js 14
 - npm >= 6.0.0.
