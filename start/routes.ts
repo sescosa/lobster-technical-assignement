@@ -19,7 +19,6 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
-import Order from 'App/Models/Order'
 
 Route.get('/', async ({ view }) => {
   return await view.render('welcome')
@@ -29,11 +28,8 @@ Route.get('/job-description', async ({ view }) => {
   return await view.render('job_description')
 })
 
-Route.get('/orders', async ({ view }) => {
-  const orders = await Order.query().preload('items')
-  return await view.render('orders/index', { orders })
-})
-Route.get('/orders/:id', async ({ view, params }) => {
-  const order = await Order.query().where('id', '=', params.id).preload('items').firstOrFail()
-  return await view.render('orders/show/show.edge', { order })
-})
+Route.get('/orders', 'OrdersController.index')
+Route.get('/orders/:id', 'OrdersController.show')
+
+Route.post('/orders/:order_id/items', 'OrderItemsController.store')
+Route.delete('/orders/:order_id/items/:id', 'OrderItemsController.destroy')

@@ -20,11 +20,21 @@
 
     <div class="mt-2 space-y-6">
       @each(item in order.items)
-      <div class="px-4 lg:px-8 py-1 lg:py-2 bg-primary-50 rounded-lg">
-        <p>{{item.name}}</p>
-        <p>{{item.price}}€</p>
+      <div
+        class="px-4 md:px-8 py-1 md:py-3 flex items-center space-x-6 md:space-x-8 bg-white-50 border-primary-200 border rounded-lg">
+        <div>
+          @include('orders/show/delete-item')
+        </div>
+        <div>
+          <p>{{item.name}}</p>
+          <p>{{item.price}}€</p>
+        </div>
       </div>
       @endeach
+
+      <div>
+        Total: {{order.total}}€
+      </div>
     </div>
 
     <div class="mt-4">

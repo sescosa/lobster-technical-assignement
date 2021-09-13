@@ -16,7 +16,26 @@
     </div>
 
     <div>
-      form
+      <h2 class="text-center text-xl font-serif">Add a new Item to the order</h2>
+      <form action="{{route('OrderItemsController.store', [order.id])}}" method="post" class="mt-4">
+        <div class="flex justify-center items-center space-x-6">
+          <div>
+            <label for="new_input_name">Name of new item</label>
+            <input type="text" name="name" id="new_input_name"
+              class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md">
+          </div>
+          <div>
+            <label for="new_input_price">Price of new item</label>
+            <input type="number" min="0" step="0.01" name="price" id="new_input_price"
+              class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md">
+          </div>
+        </div>
+        <div class="mt-4 w-full text-center">
+          <button class=" px-3 py-1.5 rounded-md bg-primary-700 hover:bg-primary-800 text-white shadow" type="submit">
+            Add
+          </button>
+        </div>
+      </form>
     </div>
 
   </div>
