@@ -19,11 +19,10 @@
 
     @slot('body')
     @each((order, index) in orders)
-    <tr id="order_{{order.id}}">
-      <td>{{order.name}}</td>
+    <tr id="order_{{order.id}}" class="bg-white">
+      <td class="text-primary-600">{{order.name}}</td>
       <td>
-        @!component('components/locale_timestamp', { ts: order.createdAt, showTime: true, showDate: true, classes:
-        'text-primary-600' })
+        @!component('components/locale_timestamp', { ts: order.createdAt, showTime: true, showDate: true })
       </td>
       <td>
         {{order.customersName}}

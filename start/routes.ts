@@ -32,4 +32,5 @@ Route.get('/orders', 'OrdersController.index')
 Route.get('/orders/:id', 'OrdersController.show')
 
 Route.post('/orders/:order_id/items', 'OrderItemsController.store')
+Route.put('/orders/:order_id/items/:id', 'OrderItemsController.update')
 Route.delete('/orders/:order_id/items/:id', 'OrderItemsController.destroy')

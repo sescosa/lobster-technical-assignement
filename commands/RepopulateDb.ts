@@ -12,7 +12,7 @@ export default class RepopulateDb extends BaseCommand {
    * Command description is displayed in the "help" output
    */
   public static description =
-    'Destroys and then recreates all DB tables. And then it runs the OrdersSeeder'
+    'Destroys and then recreates all DB tables. Then it populates them with some fake orders and items. This command can be found in "commands/RepopulateDb.ts"'
 
   public static settings = {
     /**

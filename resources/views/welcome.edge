@@ -10,7 +10,47 @@
 
     <h2>Project Lobster & Technology</h2>
 
-    <p>In Project Lobster we are always looking for curious, professional, and eager to learn developers.</p>
+    <p>
+      In Project Lobster we are always looking for curious, professional, and eager to learn developers.
+      <br>
+      Thanks to you, we can ship more and better value to our end customers, as well as making the best decisions
+      possible from a business point of view.
+    </p>
+
+    <p>
+      To us, your previous experience isn't as important as:
+      <ul>
+        <li>Your attitude in front of new things</li>
+        <li>Your eagerness to learn</li>
+        <li>Your humility</li>
+        <li>Your relationship with co-workers</li>
+      </ul>
+    </p>
+
+
+    <h2>Repository introduction</h2>
+    <p>
+      The repository represents a really basic admin screen where users can see the Orders of an e-commerce.
+      <br>
+      The main application you would be working with is, in essence, just that. But way more complex and filled with
+      features and details.
+    </p>
+    <h4>
+      Starting the development database
+    </h4>
+    <p>
+      To launch the development Database, just run the command:
+      <code>node ace repopulate:db</code>
+      <br>You can start working on the assignment right after running the command.
+    </p>
+    <h4>
+      Starting the development server
+    </h4>
+    <p>
+      To launch the development server, just run the command:
+      <code>npm run dev</code>
+      <br>Then visit localhost:3333 to access it
+    </p>
 
     <h2>Aim of the assignement and how it will be rated</h2>
     <p>
@@ -18,27 +58,68 @@
       context (Adonis & TailwindCSS).
     </p>
     <p>
-      It should not last more than two days.
+      It should not last more than two days. And this code will never be used in production, it is purely to understand
+      how the applicant works with the given
+      assignment.
     </p>
     <p>
       Due to the short time, and expecting that the applicant is not familiarised with frameworks and/or language, the
       quality or cleanness of code won't be harshly judged. As long as the applicant later on can ask, comment, and
-      defend his/her decisions. Sharing what could have been done better, and how.
+      defend their decisions. Sharing what could have been done better, and how.
     </p>
     <p>
-      This code will not be used in production, it is purely to understand how the applicant works with the given
-      assignment.
+      Asking questions about the assignement is okey and encouraged, we will take into account the type of questions and
+      how they are asked.
     </p>
 
 
-    <h2>Repository introduction</h2>
+
+    <h2>The assignment</h2>
+    <h3>First part</h3>
     <p>
-      The repository represents a really basic admin screen where users can see the Orders of an e-commerce.
-    </p>
-    <p>
-      Our main application is, in essence, just that. But way more complex and filled with features and details.
+      This first part of the assigments serves as an introduction to the <a
+        href="https://docs.adonisjs.com/guides/introduction">Adonis framework</a>.
+      In it you will have to create a new <a href="https://docs.adonisjs.com/guides/controllers">Controller</a> action,
+      where the Order <a href="https://docs.adonisjs.com/guides/models/introduction">model</a> will be updated.
     </p>
 
+    <p>
+      The framework encourages the MVC (<a
+        href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller</a>)
+      pattern. Where all routes hit the <code>routes.ts</code> file, and then get redirected from there to the
+      appropiate Controller. Then, inside the Controller, the business logic is applied, changes are saved to the
+      Database through a Model, and the user gets served some HTML through a View file (in Adonis those files end up
+      with the <code>.edge</code> extension)
+    </p>
+
+    <p>
+      If you go to an Order details page: you will see at the top the customer information.
+      <br>Right now that information cannot be changed by the users, which is really inconvenient when they make a
+      mistake that needs to be corrected.
+      <br>Our users would like to be able to update this data. To achieve that, you will have to:
+      <ol>
+        <li>Create a <code>update</code> action in the <code>OrdersController.ts</code> file</li>
+        <li>Link a route to it in the <code>routes.ts</code> file</li>
+        <li>Change the <code>views/orders/show.edge</code> file to include a <code>form</code> element</li>
+        <li>Make the <code>customersName</code>, <code>customersEmail</code> and <code>customersPhone</code> order
+          attributes
+          editable</li>
+        <li>When the form is submited: the submitted values should get saved on that order, and the user should get
+          redirected to the order page</li>
+      </ol>
+    </p>
+
+    <p>
+      You should look at how we currently update the Items details for reference. The item-update form in the file
+      <code>resources/views/orders/show/update-item.edge</code>, and the
+      <code>update</code> action in the file <code>OrderItemsController.update</code> are made to help
+      you. The general logic and structure should be fairly similar to what you need to do.
+    </p>
+
+    <h3>Second part</h3>
+    <p>
+      < Work in progress>
+    </p>
 
     <h2>Tech stack and frameworks used</h2>
     <p>
@@ -119,7 +200,8 @@
           </div>
         </p>
         <p>
-          Eventhough it can seem propostous to some developers at first, in our experience it is one of the most quick,
+          Eventhough it can seem preposterous to some developers at first, in our experience it is one of the most
+          quick,
           direct, and low-maintenance ways of writing good CSS.
         </p>
       </div>

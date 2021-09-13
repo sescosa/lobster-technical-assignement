@@ -15,6 +15,7 @@
 
 import Logger from '@ioc:Adonis/Core/Logger'
 import HttpExceptionHandler from '@ioc:Adonis/Core/HttpExceptionHandler'
+import { HttpContext } from '@adonisjs/core/build/standalone'
 
 export default class ExceptionHandler extends HttpExceptionHandler {
   protected statusPages = {
@@ -25,5 +26,15 @@ export default class ExceptionHandler extends HttpExceptionHandler {
 
   constructor() {
     super(Logger)
+  }
+
+  public async handle(error, ctx: HttpContext) {
+    if (error.code === 'E_VALIDATION_FAILURE') {
+      ctx.logger.warn('E_VALIDATION_FAILURE')
+      ctx.logger.warn(error.messages)
+    } else {
+      ctx.logger.error(error)
+    }
+    return ctx.response.redirect().back()
   }
 }
