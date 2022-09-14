@@ -6,7 +6,7 @@
  */
 
 import Env from '@ioc:Adonis/Core/Env'
-import { ShieldConfig } from '@ioc:Adonis/Addons/Shield'
+import { value ShieldConfig } from '@ioc:Adonis/Addons/Shield'
 
 /*
 |--------------------------------------------------------------------------
@@ -73,7 +73,7 @@ export const csrf: ShieldConfig['csrf'] = {
   | Enable/Disable CSRF
   |--------------------------------------------------------------------------
   */
-  enabled: Env.get('NODE_ENV') !== 'testing',
+  enabled: Env.get('NODE_ENV') !== 'test',
 
   /*
   |--------------------------------------------------------------------------

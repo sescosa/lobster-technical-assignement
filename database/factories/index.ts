@@ -3,11 +3,10 @@ import Item from 'App/Models/Item'
 import Order from 'App/Models/Order'
 
 export const OrderFactory = Factory.define(Order, ({ faker }) => {
-  const fakeUser = faker.helpers.createCard()
   return {
-    customersEmail: fakeUser.email,
-    customersName: fakeUser.name,
-    customersPhone: fakeUser.phone,
+    customersEmail: faker.internet.exampleEmail(),
+    customersName: faker.name.fullName(),
+    customersPhone: faker.phone.number('+34 #########'),
   }
 })
   .relation('items', () => ItemFactory)

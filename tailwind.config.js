@@ -1,18 +1,13 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 module.exports = {
-  mode: 'jit',
-  purge: {
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      './resources/views/**/*.edge',
-      './resources/assets/**/*.js',
-      './resources/assets/**/*.ts',
-      './resources/assets/**/*.css',
-      './resources/**/*.vue',
-    ],
-  },
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    './resources/views/**/*.edge',
+    './resources/assets/**/*.js',
+    './resources/assets/**/*.ts',
+    './resources/assets/**/*.css',
+    './resources/**/*.vue',
+  ],
   theme: {
     extend: {
       screens: {
