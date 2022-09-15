@@ -1,6 +1,7 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema } from '@ioc:Adonis/Core/Validator'
 import Item from 'App/Models/Item'
+import Event from '@ioc:Adonis/Core/Event'
 
 export default class OrderItemsController {
   public async store({ request, response, params }: HttpContextContract) {
@@ -11,6 +12,8 @@ export default class OrderItemsController {
     item.price = itemData.price
     item.orderId = params.order_id
     await item.save()
+
+    Event.emit('domain:orders:item_created', { item })
 
     return response.redirect().toRoute('OrdersController.show', [params.order_id])
   }
@@ -23,12 +26,17 @@ export default class OrderItemsController {
     item.price = itemData.price
     await item.save()
 
+    Event.emit('domain:orders:item_updated', { item })
+
     return response.redirect().toRoute('OrdersController.show', [params.order_id])
   }
 
   public async destroy({ params, response }: HttpContextContract) {
     const itemToDelete = await Item.findOrFail(params.id)
     await itemToDelete.delete()
+
+    Event.emit('domain:orders:item_destroyed', { item: itemToDelete })
+
     return response.redirect().toRoute('OrdersController.show', [params.order_id])
   }
 }

@@ -35,6 +35,9 @@ export default class ExceptionHandler extends HttpExceptionHandler {
     } else {
       ctx.logger.error(error)
     }
-    return ctx.response.redirect().back()
+
+    if (error.code === 'E_ROUTE_NOT_FOUND') {
+      return ctx.response.notFound()
+    } else return ctx.response.redirect().back()
   }
 }

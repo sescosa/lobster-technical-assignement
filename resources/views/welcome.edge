@@ -1,8 +1,8 @@
 @layout('layout')
 
 @section('content')
-<div class="my-6 lg:my-16 px-6 lg:px-10">
-  <div class="prose prose-sm mx-auto w-screen max-w-full">
+<div class="mx-auto my-6 lg:my-16 px-6 lg:px-10 max-w-5xl">
+  <div class="prose mx-auto">
     <h1 class="text-4xl font-serif"> It Works! </h1>
     <p class="mt-4">
       Congratulations, you correctly loaded the Project Lobster Technical assignment
@@ -58,7 +58,7 @@
       context (Adonis & TailwindCSS).
     </p>
     <p>
-      It should not last more than two days. And this code will never be used in production, it is purely to understand
+      It should not last more than two/three days. And this code will never be used in production, it is purely to understand
       how the applicant works with the given
       assignment.
     </p>
@@ -75,7 +75,7 @@
 
 
     <h2>The assignment</h2>
-    <h3>First part</h3>
+    <h3>First part: making an update endpoint and hooking it to the frontend</h3>
     <p>
       This first part of the assigments serves as an introduction to the <a
         href="https://docs.adonisjs.com/guides/introduction">Adonis framework</a>.
@@ -96,30 +96,48 @@
       If you go to an Order details page: you will see at the top the customer information.
       <br>Right now that information cannot be changed by the users, which is really inconvenient when they make a
       mistake that needs to be corrected.
-      <br>Our users would like to be able to update this data. To achieve that, you will have to:
-      <ol>
-        <li>Create a <code>update</code> action in the <code>OrdersController.ts</code> file</li>
-        <li>Link a route to it in the <code>routes.ts</code> file</li>
-        <li>Change the <code>views/orders/show.edge</code> file to include a <code>form</code> element</li>
-        <li>Make the <code>customersName</code>, <code>customersEmail</code> and <code>customersPhone</code> order
-          attributes
-          editable</li>
-        <li>When the form is submited: the submitted values should get saved on that order, and the user should get
-          redirected to the order page</li>
-      </ol>
+      <br><strong>Our users would like to be able to update this order data.</strong>
+    </p>
+
+    <p>Some tips to make it easier for you:</p>
+    <ul>
+      <li>You should look at how we currently update the Items details for reference. The item-update form in the file
+        <code>resources/views/orders/show/update-item.edge</code>, and the
+        <code>update</code> action in the file <code>OrderItemsController.update</code> are made to help
+        you. The general logic and structure should be fairly similar to what you need to do.
+      </li>
+      <li>You will probably have to modify the files <code>routes.ts</code>, <code>views/orders/show.edge</code>, <code>OrdersController.ts</code></li>
+      <li>Your best friend is the <a href="https://docs.adonisjs.com/guides/introduction">Adonis documentation</a></li>
+      <li>If you get stuck: ask the person that handed you this technical test. It's part of the company culture to better ask rather than do nothing for hours! Nobody is born knowing.</li>
+    </ul>
+
+    <p>A developer colleague of yours has already implemented a couple of <strong>Acceptance tests</strong> for this endpoint in the file <code>tests/system/OrdersController.spec.ts</code>.
+      <br>You can run all of the tests from a new terminal in the root folder with the command: <code>node ace test</code>, and keep them running at every file change with <code>node ace test -w</code>
+      <br>In the terminal output when running the tests you will see some hints like the expected route, expected payload, and the expected response and if a certain Domain Event is expected. You can also read these in the test file itself.
+      <br>We expect these tests to pass when the feature is fully implemented.
+    </p>
+
+    <hr>
+
+    <h3>Second part: adding a new attribute "language" to the Orders database</h3>
+    <p>
+      The Marketing department wants to be able to communicate with our customers in their preferred language. To achieve this: we want to store in the Order database a new column "preferred_language".
+      <br>This new attribute will allow us in the future to know in which language send emails and notifications to the customer.
+      <br>For now we will only accept the language locales: <code>['es', 'en']</code>
     </p>
 
     <p>
-      You should look at how we currently update the Items details for reference. The item-update form in the file
-      <code>resources/views/orders/show/update-item.edge</code>, and the
-      <code>update</code> action in the file <code>OrderItemsController.update</code> are made to help
-      you. The general logic and structure should be fairly similar to what you need to do.
+      <strong>Your job in this second part is to modify the Orders database to add this new column <code>preferred_language</code> and be able to modify thanks to the form and endpoint you wrote in the last part. You will have to modify it to add this new field so the users can edit the field.</strong>
     </p>
 
-    <h3>Second part</h3>
-    <p>
-      < Work in progress>
-    </p>
+    <p>There are a lot of details we are not addressing on purpose (default column value? is it required? an enum is required?...) We leave them up to you and to your criteria.</p>
+
+    <p>Some tips to help you:</p>
+    <ul>
+      <li>We are using a SQL database, so a <a href="https://docs.adonisjs.com/guides/database/migrations">schema migration</a> will be needed to add a column</li>
+      <li>Once the column is added to the SQL schema, you will need to retrieve it. That will be in the Database model <code>app/Models/Order.ts</code></li>
+      <li>When adding the new field to the update request, maybe you will break the existing acceptance tests: that is okey because we are modifying the requirements of the request. You are encouraged to fix the test if you can, but that is entirely optional for this assignemnt.</li>
+    </ul>
 
     <h2>Tech stack and frameworks used</h2>
     <p>
