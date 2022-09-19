@@ -17,6 +17,8 @@ export default class Order extends BaseModel {
   public customersEmail: string
   @column()
   public customersPhone: string
+  @column()
+  public preferredLanguage: string
 
   @hasMany(() => Item)
   public items: HasMany<typeof Item>

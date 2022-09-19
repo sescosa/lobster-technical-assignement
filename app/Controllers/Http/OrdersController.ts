@@ -21,6 +21,7 @@ export default class OrdersController {
     order.customersName = orderData.customersName
     order.customersEmail = orderData.customersEmail
     order.customersPhone = orderData.customersPhone
+    order.preferredLanguage = orderData.preferredLanguage
     await order.save()
 
     Event.emit('domain:orders:order_updated', { order })
@@ -33,4 +34,5 @@ const updateOrderSchema = schema.create({
   customersName: schema.string(),
   customersEmail: schema.string(),
   customersPhone: schema.string(),
+  preferredLanguage: schema.string(),
 })
