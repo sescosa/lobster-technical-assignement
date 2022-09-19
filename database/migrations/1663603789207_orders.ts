@@ -14,7 +14,6 @@ export default class extends BaseSchema {
   }
 
   public async down () {
-    this.schema.raw('DROP TYPE IF EXISTS "user_preferred_language"')
     this.schema.alterTable(this.tableName, (table) => {
       table.dropColumn('preferred_language')
     })

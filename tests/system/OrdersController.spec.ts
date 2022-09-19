@@ -26,7 +26,7 @@ test.group('OrdersController system acceptance tests', (group) => {
   })
 
   test(`Given a PUT request to the "/orders/:id" endpoint
-  With a request payload of: { customersName: 'John', customersEmail: 'john@example.com', customersPhone: '+34123123' }
+  With a request payload of: { customersName: 'John', customersEmail: 'john@example.com', customersPhone: '+34123123', preferredLanguage: 'es' }
   And with an ":id" of an Order that exists in the Database
   Then we get a 200 status back`).run(async ({ client }) => {
     const existingOrder = await Order.firstOrFail()
@@ -35,13 +35,14 @@ test.group('OrdersController system acceptance tests', (group) => {
       customersName: 'John',
       customersEmail: 'john@example.com',
       customersPhone: '+34123123',
+      preferredLanguage: 'es',
     })
 
     response.assertStatus(200)
   })
 
   test(`Given a PUT request to the "/orders/:id" endpoint
-  With a request payload of: { customersName: 'John', customersEmail: 'john@example.com', customersPhone: '+34123123' }
+  With a request payload of: { customersName: 'John', customersEmail: 'john@example.com', customersPhone: '+34123123', preferredLanguage: 'es' }
   And with an ":id" of an Order that exists in the Database
   Then the event "domain:orders:order_updated" gets fired`).run(async ({ client, assert }) => {
     const existingOrder = await Order.firstOrFail()
@@ -52,6 +53,7 @@ test.group('OrdersController system acceptance tests', (group) => {
       customersName: 'John',
       customersEmail: 'john@example.com',
       customersPhone: '+34123123',
+      preferredLanguage: 'es',
     })
 
     assert.isTrue(eventFaker.exists('domain:orders:order_updated'))

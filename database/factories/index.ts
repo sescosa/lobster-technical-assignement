@@ -7,6 +7,7 @@ export const OrderFactory = Factory.define(Order, ({ faker }) => {
     customersEmail: faker.internet.exampleEmail(),
     customersName: faker.name.fullName(),
     customersPhone: faker.phone.number('+34 #########'),
+    preferredLanguage: 'es',
   }
 })
   .relation('items', () => ItemFactory)
