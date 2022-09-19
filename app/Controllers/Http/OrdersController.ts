@@ -1,5 +1,5 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { schema } from '@ioc:Adonis/Core/Validator'
+import { schema, rules } from '@ioc:Adonis/Core/Validator'
 import Event from '@ioc:Adonis/Core/Event'
 import Order from 'App/Models/Order'
 
@@ -32,7 +32,9 @@ export default class OrdersController {
 
 const updateOrderSchema = schema.create({
   customersName: schema.string(),
-  customersEmail: schema.string(),
+  customersEmail: schema.string([
+    rules.email()
+  ]),
   customersPhone: schema.string(),
   preferredLanguage: schema.string(),
 })
