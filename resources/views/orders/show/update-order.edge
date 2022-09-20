@@ -19,13 +19,13 @@
         <label for="{{order.id}}_input_language">Preferred Language</label>
         <select name="preferredLanguage" id="{{order.id}}_input_language"
           class="shadow-sm focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 rounded-md">
-          @if(order.preferredLanguage == 'es')
-            <option value="es" selected>Spanish</option>
-            <option value="en">English</option>
-          @else
-            <option value="es">Spanish</option>
-            <option value="en" selected>English</option>
-          @end
+          @each(( language, language_locale ) in languages)
+            @if(order.preferredLanguage == language_locale)
+              <option value="{{language_locale}}" selected>{{language}}</option>
+            @else
+              <option value="{{language_locale}}">{{language}}</option>
+            @end
+          @endeach
         </select>
       </div>
     </div>

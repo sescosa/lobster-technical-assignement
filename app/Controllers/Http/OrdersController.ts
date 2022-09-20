@@ -11,7 +11,11 @@ export default class OrdersController {
 
   public async show({ view, params }: HttpContextContract) {
     const order = await Order.query().where('id', '=', params.id).preload('items').firstOrFail()
-    return await view.render('orders/show/show.edge', { order })
+    const languages = {
+      'es': 'Spanish',
+      'en': 'English'
+    }
+    return await view.render('orders/show/show.edge', { order, languages })
   }
 
   public async update({ request, response, params }: HttpContextContract) {
