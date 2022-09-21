@@ -40,5 +40,5 @@ const updateOrderSchema = schema.create({
     rules.email()
   ]),
   customersPhone: schema.string(),
-  preferredLanguage: schema.string(),
+  preferredLanguage: schema.enum(['es','en'] as const),
 })

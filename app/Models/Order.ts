@@ -18,7 +18,7 @@ export default class Order extends BaseModel {
   @column()
   public customersPhone: string
   @column()
-  public preferredLanguage: string
+  public preferredLanguage: 'es' | 'en'
 
   @hasMany(() => Item)
   public items: HasMany<typeof Item>
