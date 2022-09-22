@@ -2,8 +2,6 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { schema } from '@ioc:Adonis/Core/Validator'
 import Item from 'App/Models/Item'
 import Event from '@ioc:Adonis/Core/Event'
-import OrderMailerService from 'App/OrderMailerService'
-import Order from 'App/Models/Order'
 
 export default class OrderItemsController {
   public async store({ request, response, params }: HttpContextContract) {
@@ -14,10 +12,6 @@ export default class OrderItemsController {
     item.price = itemData.price
     item.orderId = params.order_id
     await item.save()
-
-    const order = await Order.findOrFail(params.order_id)
-    const orderMailerService = new OrderMailerService(order.customersEmail)
-    orderMailerService.sendEmail()
 
     Event.emit('domain:orders:item_created', { item })
 
